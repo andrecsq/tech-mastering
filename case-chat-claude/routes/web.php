@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('chat');
+// });
+
+
+use App\Http\Controllers\ChatController;
+
+Route::get('/chat', [ChatController::class, 'index'])->name('chat');
+Route::post('/send-message', [ChatController::class, 'sendMessage'])->name('send-message');
