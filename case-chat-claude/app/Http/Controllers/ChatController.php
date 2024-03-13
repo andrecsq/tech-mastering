@@ -18,6 +18,7 @@ class ChatController extends Controller
         $message = new Message();
         $message->user_id = 1;
         $message->content = $request->input('message');
+        $message->inbound = false;
         $message->save();
 
         return redirect()->route('chat');

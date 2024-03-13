@@ -15,7 +15,7 @@
         </div>
         <div class="chat-messages">
             @foreach ($messages as $message)
-                <div class="message @if ($message->user_id == 2) sent @else received @endif">
+                <div class="message @if ($message->inbound) received @else sent @endif">
                     <p>{{ $message->content }}</p>
                     <span class="timestamp">{{ $message->created_at->format('h:i A') }}</span>
                 </div>
